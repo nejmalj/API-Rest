@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "movies",
+  "info": {
+    "singularName": "movie",
+    "pluralName": "movies",
+    "displayName": "Movie"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "releaseDate": {
+      "type": "date"
+    },
+    "director": {
+      "type": "string"
+    },
+    "actor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::actor.actor",
+      "mappedBy": "movie"
+    }
+  }
+}

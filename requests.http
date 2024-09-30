@@ -1,0 +1,61 @@
+GET https://api.themoviedb.org/3/discover/movie
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNjcxY2FkZTUxMzE0MGE1NjgxYjE0MzJkZTFiNjY4YyIsIm5iZiI6MTcyNzY5NjAyOC4zOTk5OTksInN1YiI6IjY2ZmE2NjFjY2M0M2NlYmQwM2YxODJmMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.TQY_QzJpbg_GmfJb9M54Fkw96XTRD90RATZRsaj9cKU
+
+###
+POST http://localhost:1337/api/movies
+Content-Type: application/json
+
+{
+  "data": {
+    "title": "H Mon titre 2",
+    "description": "Contenu du film2",
+    "releaseDate": null,
+    "director": "Madame Y",
+    "actor": 5
+  }
+}
+
+###
+
+GET /3/discover/person HTTP/1.1
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNjcxY2FkZTUxMzE0MGE1NjgxYjE0MzJkZTFiNjY4YyIsIm5iZiI6MTcyNzY5NjAyOC4zOTk5OTksInN1YiI6IjY2ZmE2NjFjY2M0M2NlYmQwM2YxODJmMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.TQY_QzJpbg_GmfJb9M54Fkw96XTRD90RATZRsaj9cKU
+Host: api.themoviedb.org
+
+###
+
+POST http://localhost:1337/api/actors
+Content-Type: application/json
+
+{
+  "data": {
+    "name": "X",
+    "surname": "Monsieur"
+  }
+}
+
+###
+
+GET http://localhost:1337/api/movies?filters[title][$startsWithi]=H
+
+###
+
+GET http://localhost:1337/api/actors
+
+###
+
+GET http://localhost:1337/api/actors?fields[0]=surname&fields[1]=name
+
+###
+
+GET http://localhost:1337/api/actors
+Authorization: Bearer fbb2b0720d3d68481931a21d49de27fb736129cb68627620c84766b462583638e8054384c4711f079f41887f494377471cd7861305423d66c8c3c5126730b3ee3d63726b0a558f733c269a94b4ffcd241338507717212c9742bb5afec8e6a760473621ba8a0c6d0d54c761576dfc6e99f0ec303eec5186d440d504a6ea8d9c0d
+
+###
+POST http://localhost:1337/api/auth/local
+Content-Type: application/json
+
+{
+  "identifier": "nejmalejeannic@gmail.com",
+  "password": "Dwucexo2"
+}
